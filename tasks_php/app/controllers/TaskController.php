@@ -8,9 +8,14 @@
 
 	class TaskController {
 
+		// public function __construct() {
+		// 	print("cheguei aqui");
+		// }
+
 		public function index() {
 
-			$task = new TaskController();
+			//$task = new TaskController();
+			phpinfo();
 			$list = $task->list();
 			$data = [ 'list' => $list ];
 
