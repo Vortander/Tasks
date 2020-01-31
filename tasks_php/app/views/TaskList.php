@@ -23,11 +23,21 @@
                 </thead> -->
                 <tbody>
                     <tr>
+                        <?php foreach($list as $n):?>
+                            <td class="checkbox">
+                                <input type="checkbox" name="selectDone" value="unchecked" />
+                            </td>
+                            <td id="<?= $n[id] ?>" data-id="algum conteudo" contenteditable="true" class="editdata">
+                                <p><?= $n['task_content'] ?></p>
+                            </td>
+                        <?php endforeach;?>
+                    </tr>
+                    <tr>
                         <td class="checkbox">
                             <input type="checkbox" name="selectDone" value="unchecked" />
                         </td>
                         <td id="data1" data-id="algum conteudo" contenteditable="true" class="editdata">
-                            New Task
+                            Click here to create a new task...
                         </td>
                     </tr>
                 </tbody>
@@ -37,9 +47,7 @@
     </body>
 </html>
 
-
-<?php print( __DIR__ ); ?>
-<?php print_r( $list ); ?>
+<!-- <?php print_r( $list ); ?>
 <?php foreach($list as $n):?>
     <p><?= $n['task_content'] ?></p>
-<?php endforeach;?>
+<?php endforeach;?> -->
