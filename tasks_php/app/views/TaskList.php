@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Tarefas</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="/assets/style.css" >
     </head>
     <body>
 
@@ -33,7 +33,7 @@
                 </tbody>
             </table>
         </div>
-    <script src="TaskList.js"></script>
+    <script src="/assets/TaskList.js"></script>
     </body>
 </html>
 
