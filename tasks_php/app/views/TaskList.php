@@ -22,16 +22,16 @@
                     </tr>
                 </thead> -->
                 <tbody>
-                    <tr>
-                        <?php foreach($list as $n):?>
+                    <?php foreach($list as $n):?>
+                        <tr>
                             <td class="checkbox">
                                 <input type="checkbox" name="selectDone" value="unchecked" />
                             </td>
-                            <td id="<?= $n[id] ?>" data-id="algum conteudo" contenteditable="true" class="editdata">
-                                <p><?= $n['task_content'] ?></p>
+                            <td id="<?= $n[id] ?>" data-id="algum conteudo" contenteditable="true" class="currentdata">
+                                <?= $n['task_content'] ?>
                             </td>
-                        <?php endforeach;?>
-                    </tr>
+                        </tr>
+                    <?php endforeach;?>
                     <tr>
                         <td class="checkbox">
                             <input type="checkbox" name="selectDone" value="unchecked" />

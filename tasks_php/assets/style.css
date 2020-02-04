@@ -32,8 +32,12 @@
 	padding: 4px;
 }
 
-.editdata {
+.currentdata {
 	background-color: whitesmoke;
+}
+
+.editdata {
+	background-color: gainsboro;
 }
 
 
