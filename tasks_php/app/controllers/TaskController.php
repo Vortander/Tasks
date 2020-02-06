@@ -12,9 +12,6 @@
 
 		public function index() {
 
-			//$inserted = $this->insert_task();
-			//print($inserted);
-
 			$task_model = new Task();
 			$result = $task_model->get_tasks_list();
 
@@ -34,12 +31,8 @@
 		public function insert_task() {
 			$task_model = new Task();
 
-			// ob_start();
-			// var_dump($_POST);
-			// error_log( ob_get_clean(), 4 );
-
-			$result = $task_model->insert_task( $_POST );
-			return $result;
+			$result_id = $task_model->insert_task( $_POST );
+			View::send_to_view( $result_id );
 		}
 
 	}

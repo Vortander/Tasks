@@ -13,11 +13,7 @@ document.querySelectorAll( ".editdata" ).forEach( element => {
 
 		fetch( 'http://localhost:8080/Task/insert_task/', {
 			method: 'POST',
-			//body: `task_content=${element.innerText}&done=false`,
 			body: formData,
-			// headers: {
-			// 	"Content-Type": "application/x-www-form-urlencoded"
-			// },
 			credentials: 'same-origin'
 		})
 			.then( ( response ) => response.text() )
@@ -28,7 +24,6 @@ document.querySelectorAll( ".editdata" ).forEach( element => {
 			.catch( ( error ) => {
 				console.log( error );
 			});
-		//console.log( element.innerText, element.id, element.dataset.id );
 
 	});
 

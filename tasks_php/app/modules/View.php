@@ -14,4 +14,9 @@
 			include $view;
 			#return ob_get_clean();
 		}
+
+		public static function send_to_view( $data ) {
+			echo $data;
+		}
+
 	}
