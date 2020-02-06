@@ -4,7 +4,7 @@
 
 	class Dispatcher {
 
-		public function dispatch( $controller_name ) {
+		public function dispatch() {
 
 			$this->request = new Request();
 			Router::parse( $this->request->url, $this->request );

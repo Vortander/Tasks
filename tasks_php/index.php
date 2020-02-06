@@ -11,5 +11,5 @@
 	require_once __DIR__ . '/app/config/Dispatcher.php';
 
 	$dispatch = new Dispatcher;
-	$dispatch->dispatch( 'Task' );
+	$dispatch->dispatch();
 
