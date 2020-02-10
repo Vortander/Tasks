@@ -40,4 +40,9 @@
 	background-color: gainsboro;
 }
 
+[data-done="t"] {
+	text-decoration: line-through;
+	opacity: 0.5;
+}
+
 

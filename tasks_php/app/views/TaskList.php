@@ -27,16 +27,16 @@
                             <td class="checkbox">
                                 <input type="checkbox" data-id="<?= $n['id'] ?>" name="select_done" <?php if ( $n['done'] === "t" ) echo 'checked' ?> />
                             </td>
-                            <td id="<?= $n['id'] ?>" data-id="<?= $n['id'] ?>" data-done="<?= $n['done'] ?>" contenteditable="true" class="editdata">
+                            <td data-id="<?= $n['id'] ?>" data-done="<?= $n['done'] ?>" contenteditable="true" class="editdata">
                                 <?= $n['task_content'] ?>
                             </td>
                         </tr>
                     <?php endforeach;?>
                     <tr>
                         <td class="checkbox">
-                            <input type="checkbox" name="select_done" />
+                            <input type="checkbox" data-id="-1" name="select_done" />
                         </td>
-                        <td id="-1" data-id="-1" contenteditable="true" class="editdata">
+                        <td data-id="-1" contenteditable="true" class="editdata">
                             Click here to create a new task...
                         </td>
                     </tr>

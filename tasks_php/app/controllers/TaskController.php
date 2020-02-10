@@ -35,4 +35,11 @@
 			View::send_to_view( $result_id );
 		}
 
+		public function set_done() {
+			$task_model = new Task();
+
+			$result_id = $task_model->set_done( $_POST );
+			View::send_to_view( $result_id );
+		}
+
 	}

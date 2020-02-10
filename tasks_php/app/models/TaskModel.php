@@ -17,7 +17,7 @@
 
 		}
 
-		private static function _get_inserted_task_id ( $resource ) {
+		private static function _get_task_id ( $resource ) {
 
 			$inserted_row = pg_fetch_object( $resource );
 
@@ -58,7 +58,7 @@
 				}
 
 				if ( $result !== FALSE ) {
-					return $this->_get_inserted_task_id( $result );
+					return $this->_get_task_id( $result );
 				}
 			}
 
@@ -66,6 +66,23 @@
 
 			return "false";
 
+		}
+
+		public function set_done( $data ) {
+
+			$connection = new Database;
+			$connection->connect( dirname( __DIR__ ) . '/../database.ini' );
+
+			$sql = "UPDATE tasks_app.tasks SET done = $1 WHERE id = $2 RETURNING *";
+			$result = pg_query_params( $connection->db_connection, $sql, array( $data["done"], $data["id"] ) );
+
+			if ( $result !== FALSE ) {
+				return $this->_get_task_id( $result );
+			}
+
+			pg_close( $connection->db_connection );
+
+			return "false";
 		}
 
 	}
