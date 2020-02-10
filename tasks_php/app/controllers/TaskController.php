@@ -28,10 +28,10 @@
 
 		}
 
-		public function insert_task() {
+		public function insert_or_update_task() {
 			$task_model = new Task();
 
-			$result_id = $task_model->insert_task( $_POST );
+			$result_id = $task_model->insert_or_update_task( $_POST );
 			View::send_to_view( $result_id );
 		}
 

@@ -30,7 +30,7 @@
 			$connection = new Database;
 			$connection->connect( dirname( __DIR__ ) . '/../database.ini' );
 
-			$sql = "SELECT * from tasks_app.tasks";
+			$sql = "SELECT * from tasks_app.tasks ORDER BY id";
 			$query_result = pg_query( $connection->db_connection, $sql );
 
 			pg_close( $connection->db_connection );
@@ -39,7 +39,7 @@
 
 		}
 
-		public function insert_task( $data ) {
+		public function insert_or_update_task( $data ) {
 
 			$connection = new Database;
 			$connection->connect( dirname( __DIR__ ) . '/../database.ini' );
@@ -47,8 +47,15 @@
 			$validation = $this->_validate_data( $data );
 
 			if ( $validation !== FALSE ) {
-				$sql = "INSERT INTO tasks_app.tasks ( task_content, tag_id, done ) VALUES ( $1, $2, $3 ) RETURNING *";
-				$result = pg_query_params( $connection->db_connection, $sql, array( $data["task_content"], $data["tag_id"], $data["done"] ) );
+
+				if ( $data["id"] === "-1" ) {
+					$sql = "INSERT INTO tasks_app.tasks ( task_content, tag_id, done ) VALUES ( $1, $2, $3 ) RETURNING *";
+					$result = pg_query_params( $connection->db_connection, $sql, array( $data["task_content"], $data["tag_id"], $data["done"] ) );
+				}
+				else {
+					$sql = "UPDATE tasks_app.tasks SET task_content = $1, tag_id = $2, done = $3 WHERE id = $4 RETURNING *";
+					$result = pg_query_params( $connection->db_connection, $sql, array( $data["task_content"], $data["tag_id"], $data["done"], $data["id"] ) );
+				}
 
 				if ( $result !== FALSE ) {
 					return $this->_get_inserted_task_id( $result );

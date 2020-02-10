@@ -32,11 +32,11 @@
 	padding: 4px;
 }
 
-.currentdata {
+.editdata {
 	background-color: whitesmoke;
 }
 
-.editdata {
+[data-id="-1"] {
 	background-color: gainsboro;
 }
 
