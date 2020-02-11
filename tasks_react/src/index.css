@@ -1,0 +1,98 @@
+body {
+	font: 14px "Century Gothic", Futura, sans-serif;
+	margin: 20px;
+}
+
+.header {
+	background-color: cornflowerblue;
+
+	margin: 30px 30px;
+	height: 50px;
+}
+
+.header p {
+	font-weight: bold;
+	color: floralwhite;
+	font-size: 1.5em;
+	padding: 10px;
+}
+
+.content {
+	background-color: gainsboro;
+	margin: 30px 30px;
+}
+
+.content table {
+	border-collapse: collapse;
+	border: 1px solid rgb(200,200,200);
+	width: 100%;
+}
+
+.checkbox {
+	width: 25px;
+}
+
+.content td, th {
+	border: 1px solid black;
+	padding: 4px;
+}
+
+.editdata {
+	background-color: whitesmoke;
+}
+
+[data-id="-1"] {
+	background-color: gainsboro;
+}
+
+[data-done="t"] {
+	text-decoration: line-through;
+	opacity: 0.5;
+}
+
+
+ol, ul {
+	padding-left: 30px;
+}
+
+.board-row:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+.status {
+	margin-bottom: 10px;
+}
+
+.square {
+	background: #fff;
+	border: 1px solid #999;
+	float: left;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 34px;
+	height: 34px;
+	margin-right: -1px;
+	margin-top: -1px;
+	padding: 0;
+	text-align: center;
+	width: 34px;
+}
+
+.square:focus {
+	outline: none;
+}
+
+.kbd-navigation .square:focus {
+	background: #ddd;
+}
+
+.game {
+	display: flex;
+	flex-direction: row;
+}
+
+.game-info {
+	margin-left: 20px;
+}
