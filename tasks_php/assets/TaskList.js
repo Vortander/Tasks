@@ -50,6 +50,7 @@ document.querySelectorAll( 'input[name="select_done"]' ).forEach( element => {
 			.then( ( response ) => response.text() )
 			.then( ( data ) => {
 				console.log( 'Success:', data );
+				location.reload();
 			})
 			.catch( ( error ) => {
 				console.log( error );
