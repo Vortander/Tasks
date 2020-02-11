@@ -30,13 +30,23 @@ class TaskRow extends React.Component {
 }
 
 class NewTaskRow extends React.Component {
+
+	constructor( props ) {
+		super( props );
+		this.handleClick = this.handleClick.bind( this );
+	}
+
+	handleClick() {
+		console.log("Um teste de clique");
+	}
+
 	render() {
 		return (
 			<tr>
 				<td class="checkbox">
 					<input type="checkbox" data-id="-1" name="select_done" />
 				</td>
-				<td data-id="-1" contenteditable="true" class="editdata">
+				<td data-id="-1" contenteditable="true" class="editdata" onClick={this.handleClick}>
 					Click here to create a new task...
 				</td>
 			</tr>
