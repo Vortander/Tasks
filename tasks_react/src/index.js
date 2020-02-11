@@ -14,6 +14,36 @@ class Menu extends React.Component {
 	}
 }
 
+class TaskRow extends React.Component {
+	render() {
+		return (
+			<tr>
+				<td class="checkbox">
+					<input type="checkbox" data-id="" name="select_done" />
+				</td>
+				<td data-id="" data-done="" contenteditable="true" class="editdata">
+					Tasks from dataset...
+				</td>
+			</tr>
+		);
+	}
+}
+
+class NewTaskRow extends React.Component {
+	render() {
+		return (
+			<tr>
+				<td class="checkbox">
+					<input type="checkbox" data-id="-1" name="select_done" />
+				</td>
+				<td data-id="-1" contenteditable="true" class="editdata">
+					Click here to create a new task...
+				</td>
+			</tr>
+		);
+	}
+}
+
 class TaskBoard extends React.Component {
 	render() {
 		return(
@@ -21,30 +51,15 @@ class TaskBoard extends React.Component {
 				<table>
 					<tbody>
 						{/* <?php foreach($list as $n):?> */}
-							<tr>
-								<td class="checkbox">
-									<input type="checkbox" data-id="" name="select_done" />
-								</td>
-								<td data-id="" data-done="" contenteditable="true" class="editdata">
-									Tarefas que vem do banco...
-								</td>
-							</tr>
+							<TaskRow />
 						{/* <?php endforeach;?> */}
-						<tr>
-							<td class="checkbox">
-								<input type="checkbox" data-id="-1" name="select_done" />
-							</td>
-							<td data-id="-1" contenteditable="true" class="editdata">
-								Click here to create a new task...
-							</td>
-						</tr>
+						<NewTaskRow />
 					</tbody>
 				</table>
         	</div>
 		);
 	}
 }
-
 
 class Square extends React.Component {
 	render() {
@@ -94,17 +109,6 @@ class Tasks extends React.Component {
 			  <Menu />
 		  	  <TaskBoard />
 		  </div>
-
-
-		// <div className="tasks">
-		//   <div className="tasks-board">
-		// 	<Board />
-		//   </div>
-		//   <div className="tasks-info">
-		// 	<div>{/* status */}</div>
-		// 	<ol>{/* TODO */}</ol>
-		//   </div>
-		// </div>
 	  );
 	}
 }
