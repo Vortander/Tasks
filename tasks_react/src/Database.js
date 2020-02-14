@@ -4,12 +4,13 @@ class Database extends React.Component {
 
 	constructor( props ) {
 		super( props );
-		var request = indexedDB.open( "TasksDatabase" );
+		var DBOpenRequest = indexedDB.open( "TasksDatabase", 4 );
 	}
 
 	render() {
+
 		return (
-			<p> database </p>
+			<p> database {this.props.DBOpenRequest} </p>
 		);
 	}
 }
