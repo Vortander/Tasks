@@ -19,24 +19,7 @@
 
         <div class="content">
             <table class="taskboard">
-                <!-- <thead>
-                    <tr>
-                        <th>Concluído</th>
-                        <th>Tarefa</th>
-                    </tr>
-                </thead> -->
                 <tbody>
-                    <!-- <?php foreach($list as $n):?> -->
-                        <tr>
-                            <td class="checkbox">
-                                <input type="checkbox" data-id="" name="select_done" />
-                            </td>
-                            <td data-id="" data-done="" contenteditable="true" class="editdata">
-								<!-- <?= $n['task_content'] ?> -->
-								Tarefas que vem do banco.
-                            </td>
-                        </tr>
-                    <!-- <?php endforeach;?> -->
                     <tr>
                         <td class="checkbox">
                             <input type="checkbox" data-id="-1" name="select_done" />
@@ -48,7 +31,7 @@
                 </tbody>
             </table>
         </div>
+        <script src="src/CreateDB.js"></script>
 		<script src="src/TaskList.js"></script>
-		<script src="src/CreateDB.js"></script>
     </body>
 </html>

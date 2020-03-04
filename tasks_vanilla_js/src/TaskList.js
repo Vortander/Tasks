@@ -13,6 +13,7 @@ document.querySelectorAll( ".editdata" ).forEach( element => {
 	});
 
 	element.addEventListener( "blur", event => {
+
 		var checked = document.querySelector(`input[name="select_done"][data-id="${element.dataset.id}"]`).checked;
 
 		var formData = new FormData();
@@ -21,19 +22,15 @@ document.querySelectorAll( ".editdata" ).forEach( element => {
 		formData.append( 'done', checked );
 		formData.append( 'tag_id', 1 );
 
-		fetch( 'http://localhost:8080/Task/insert_or_update_task/', {
-			method: 'POST',
-			body: formData,
-			credentials: 'same-origin'
-		})
-		.then( ( response ) => response.text() )
-		.then( ( data ) => {
-			console.log( 'Success:', data );
+		var db = request.result;
+		var tx = db.transaction( "tasks", "readwrite" );
+		var store = tx.objectStore( "tasks" );
+
+		var callback = store.put( { task: element.innerText, done: false } );
+		callback.onsuccess = ( event ) => {
+			db.close();
 			location.reload();
-		})
-		.catch( ( error ) => {
-			console.log( error );
-		});
+		};
 
 	});
 
