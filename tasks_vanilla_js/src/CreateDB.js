@@ -49,6 +49,7 @@ request.onsuccess = function( event ) {
 			new_tr.appendChild( new_td );
 
 			new_checkbox.addEventListener( "click", set_done );
+			new_td.addEventListener( "blur", update );
 
 			document.querySelector( ".taskboard" ).appendChild( new_tr );
 
