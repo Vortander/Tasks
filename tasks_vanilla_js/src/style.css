@@ -53,7 +53,7 @@
 	background-color: gainsboro;
 }
 
-[data-done="t"] {
+[data-done="true"] {
 	text-decoration: line-through;
 	opacity: 0.5;
 }

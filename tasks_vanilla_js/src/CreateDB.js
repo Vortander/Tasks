@@ -25,17 +25,33 @@ request.onsuccess = function( event ) {
 
 	query.onsuccess = event => {
 		query.result.reverse().forEach( item => {
-			document.querySelector( ".taskboard" ).insertAdjacentHTML(
-				'afterbegin',
-				`<tr>
-					<td class="checkbox">
-						<input type="checkbox" data-id="${item.id}" name="select_done" />
-					</td>
-					<td data-id="${item.id}" data-done="${item.done}" contenteditable="true" class="editdata">
-						${item.task}
-			        </td>
-				</tr>`
-			);
+
+			let new_tr = document.createElement( "tr" );
+			let new_td = document.createElement( "td" );
+			let new_checkbox = document.createElement( "input" );
+
+			new_td.className = "checkbox";
+			new_checkbox.type = "checkbox";
+			new_checkbox.dataset.id = item.id;
+			new_checkbox.name = "select_done";
+			new_checkbox.checked = item.done;
+
+			new_td.appendChild( new_checkbox );
+			new_tr.appendChild( new_td );
+
+			new_td = document.createElement( "td" );
+			new_td.className = "editdata";
+			new_td.contentEditable = true;
+			new_td.dataset.done = item.done;
+			new_td.dataset.id = item.id;
+			new_td.innerHTML = item.task;
+
+			new_tr.appendChild( new_td );
+
+			new_checkbox.addEventListener( "click", set_done );
+
+			document.querySelector( ".taskboard" ).appendChild( new_tr );
+
 		});
 	};
 }
