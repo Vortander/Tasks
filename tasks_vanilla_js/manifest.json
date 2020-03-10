@@ -1,0 +1,23 @@
+{
+	"manifest_version" : 2,
+	"name" : "Tasks",
+	"version" : "1.0",
+	"author" : "Virginia O. Andersson",
+
+	"description" : "App to store tasks using IndexedDB API.",
+
+	"icons" : {
+		"48" : "icons/icons8-inspection-48.png"
+	},
+
+	"permissions" : [
+		"activeTab"
+	],
+
+	"sidebar_action" : {
+		"default_title" : "Tasks",
+		"default_panel" : "index.html",
+		"default_icon" : "icons/icons8-inspection-48-color.png"
+	}
+
+}
