@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tasks</title>
+        <link rel="stylesheet" type="text/css" href="src/style.css" >
+    </head>
+    <body>
+
+        <div class="header">
+            <div class="title">
+                <p>Tasks</p>
+            </div>
+            <div class="hide">
+                <p title="Hide Done">&#x2611;</p>
+            </div>
+        </div>
+
+		<div class="status">
+			<p>IndexedDB Status</p>
+		</div>
+
+        <div class="content">
+            <table class="taskboard">
+                <tbody>
+                    <tr>
+                        <td class="checkbox">
+                            <input type="checkbox" data-id="-1" name="select_done" />
+                        </td>
+                        <td data-id="-1" contenteditable="true" class="editdata">
+                            Click here to create a new task...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="src/CreateDB.js"></script>
+		<script src="src/TaskList.js"></script>
+    </body>
+</html>
