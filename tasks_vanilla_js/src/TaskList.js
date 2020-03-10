@@ -58,6 +58,12 @@ function update( event ) {
 
 };
 
+document.querySelector( ".hide" ).addEventListener( "click", event => {
+	document.querySelectorAll(`[data-done="true"]`).forEach ( element => {
+		element.parentNode.classList.toggle( "disabled" );
+	});
+});
+
 document.querySelectorAll( ".taskboard" ).forEach ( element => {
 	element.addEventListener( "onload", event => {
 		console.log("carregou a tabela...");

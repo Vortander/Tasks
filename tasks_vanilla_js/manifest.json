@@ -4,7 +4,7 @@
 	"version" : "1.0",
 	"author" : "Virginia O. Andersson",
 
-	"description" : "App to store tasks using IndexedDB API.",
+	"description" : "A very, very simple app to store tasks using IndexedDB API.",
 
 	"icons" : {
 		"48" : "icons/icons8-inspection-48.png"
