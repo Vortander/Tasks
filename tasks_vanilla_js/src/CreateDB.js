@@ -11,6 +11,8 @@ request.onerror = function( event ) {
 	status_box.forEach( element => {
 		element.innerHTML = "An error occoured while opening an IndexedDB database."
 	});
+
+	location.reload();
 }
 
 request.onsuccess = function( event ) {
