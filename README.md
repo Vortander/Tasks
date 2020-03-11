@@ -1,6 +1,6 @@
 # Tasks
 
-A very, very simple task application, developed in different approaches, for **learning purposes**.
+A very, very simple task application, developed with different approaches, for **learning purposes**.
 
 
 Project and code references used are included in each source directory.
