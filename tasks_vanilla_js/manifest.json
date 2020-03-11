@@ -3,6 +3,7 @@
 	"name" : "Tasks",
 	"version" : "1.0",
 	"author" : "Virginia O. Andersson",
+	"homepage_url": "https://github.com/Vortander/Tasks",
 
 	"description" : "A very, very simple app to store tasks using IndexedDB API.",
 
