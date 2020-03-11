@@ -3,13 +3,13 @@ var status_box = document.querySelectorAll( ".status p" );
 
 if ( !window.indexedDB ) {
 	status_box.forEach( element => {
-		element.innerHTML = "Your browser doesn't support a stable version of IndexedDB."
+		element.innerText = "Your browser doesn't support a stable version of IndexedDB."
 	});
 }
 
 request.onerror = function( event ) {
 	status_box.forEach( element => {
-		element.innerHTML = "An error occoured while opening an IndexedDB database."
+		element.innerText = "An error occoured while opening an IndexedDB database."
 	});
 
 	location.reload();
@@ -17,7 +17,7 @@ request.onerror = function( event ) {
 
 request.onsuccess = function( event ) {
 	status_box.forEach( element => {
-		element.innerHTML = "IndexedDB TasksDatabase created." ;
+		element.innerText = "IndexedDB TasksDatabase created." ;
 	});
 
 	var db = request.result;
@@ -46,7 +46,7 @@ request.onsuccess = function( event ) {
 			new_td.contentEditable = true;
 			new_td.dataset.done = item.done;
 			new_td.dataset.id = item.id;
-			new_td.innerHTML = item.task;
+			new_td.innerText = item.task;
 
 			new_tr.appendChild( new_td );
 
@@ -69,6 +69,6 @@ request.onupgradeneeded = function( event ) {
 	db.close();
 
 	status_box.forEach( element  => {
-		element.innerHTML = element.innerHTML + " First object store created.";
+		element.innerText = element.innerText + " First object store created.";
 	});
 }
