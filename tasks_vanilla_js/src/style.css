@@ -26,6 +26,7 @@
 	background-color: lightpink;
 	margin: 0;
 	height: auto;
+	display: none;
 }
 
 .status p {
