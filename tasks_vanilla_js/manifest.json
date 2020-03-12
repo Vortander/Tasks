@@ -1,7 +1,7 @@
 {
 	"manifest_version" : 2,
-	"name" : "Tasks",
-	"version" : "1.0.3",
+	"name" : "SimpleTasks",
+	"version" : "1.0.4",
 	"author" : "Virginia O. Andersson",
 	"homepage_url": "https://github.com/Vortander/Tasks",
 
@@ -16,7 +16,7 @@
 	],
 
 	"sidebar_action" : {
-		"default_title" : "Tasks",
+		"default_title" : "SimpleTasks",
 		"default_panel" : "sidebar/index.html",
 		"default_icon" : "icons/icons8-inspection-48-color.png"
 	}
