@@ -16,7 +16,7 @@
 	],
 
 	"sidebar_action" : {
-		"default_title" : "SimpleTasks",
+		"default_title" : "Tasks",
 		"default_panel" : "sidebar/index.html",
 		"default_icon" : "icons/icons8-inspection-48-color.png"
 	}
